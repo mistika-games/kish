@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8507b457aeb644f9a25d9ca3bf04cce9, type: 3}
+  m_Name: Catalog
+  m_EditorClassIdentifier: 
+  InputManager: {fileID: 1092310621799591674, guid: b73501aa9ee0c854ebb75422da725ca7, type: 3}
+  Player: {fileID: 1506217940563974255, guid: 19dda145925ee824f9d26c0232a4a3ac, type: 3}
+  GameConfiguration: {fileID: 11400000, guid: ffea01b7aeb88dd4287f3c33d8576eab, type: 2}
