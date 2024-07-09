@@ -15,4 +15,5 @@ MonoBehaviour:
   CharacterSettings:
     HorizontalVelocityDamping: 10
     MaxSpeed: 3.5
-    JumpForce: 5
+    JumpForce: 7
+    Gravity2D: -15

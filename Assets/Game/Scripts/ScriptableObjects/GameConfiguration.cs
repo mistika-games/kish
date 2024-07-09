@@ -9,6 +9,11 @@ namespace Game.Scripts.ScriptableObjects
     {
         [Title("Character Settings")] [SerializeField]
         public CharacterSettings CharacterSettings;
+
+        private void OnValidate()
+        {
+            Physics2D.gravity = new Vector2(0,CharacterSettings.Gravity2D);
+        }
     }
 
     [Serializable]
@@ -16,6 +21,7 @@ namespace Game.Scripts.ScriptableObjects
     {
         public float HorizontalVelocityDamping = 5;
         public float MaxSpeed = 7;
-        public float JumpForce = 15f; 
+        public float JumpForce = 15f;
+        public float Gravity2D = -10f;
     }
 }

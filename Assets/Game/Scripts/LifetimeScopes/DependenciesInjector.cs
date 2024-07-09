@@ -17,6 +17,7 @@ namespace Game.Scripts.LifetimeScopes
         {
             builder.RegisterComponentInNewPrefab(_catalog.Player, Lifetime.Scoped);
             builder.RegisterComponentInNewPrefab(_catalog.InputManager, Lifetime.Scoped);
+            builder.RegisterComponentInNewPrefab(_catalog.FollowCamera, Lifetime.Scoped);
             builder.RegisterInstance(_catalog.GameConfiguration.CharacterSettings);
             builder.Register<ICharacterModel, CharacterModel>(Lifetime.Transient);
             builder.Register<ICharacterPhysicsController, CharacterPhysicsController>(Lifetime.Transient);
