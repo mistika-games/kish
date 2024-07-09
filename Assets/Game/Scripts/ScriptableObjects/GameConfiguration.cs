@@ -10,10 +10,10 @@ namespace Game.Scripts.ScriptableObjects
         [Title("Character Settings")] [SerializeField]
         public CharacterSettings CharacterSettings;
 
-        private void OnValidate()
-        {
-            Physics2D.gravity = new Vector2(0,CharacterSettings.Gravity2D);
-        }
+        // private void OnValidate()
+        // {
+        //     Physics2D.gravity = new Vector2(0,CharacterSettings.Gravity2D);
+        // }
     }
 
     [Serializable]
