@@ -1,9 +1,10 @@
 using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Core;
 using UnityEngine;
 
 namespace Game.Scripts.Updaters
 {
-    public class CharacterAnimationUpdater
+    public class CharacterAnimationUpdater : BaseCoreController
     {
         private readonly ICharacterModel _characterModel;
         private readonly Animator _animator;
@@ -18,16 +19,37 @@ namespace Game.Scripts.Updaters
             _characterModel = characterModel;
             _animator = animator;
         }
+        
+        protected override void OnInit()
+        {
+            _characterModel.OnAttack += SetAtkTrigger;
+        }
 
         public void Update()
         {
-            var absX = Mathf.Abs(_characterModel.Velocity.x);
-            if (absX>1)
-                _animator.transform.localScale = new Vector3(1 * (Mathf.Sign(_characterModel.Velocity.x)), 1, 1);
             _animator.SetBool(Grounded, _characterModel.IsGrounded);
-            _animator.SetFloat(HSpd, absX);
+            _animator.SetFloat(HSpd, Mathf.Abs(_characterModel.Velocity.x));
             _animator.SetFloat(VSpd, _characterModel.Velocity.y);
+            
+            FlipView();
+        }
+        
+        private void FlipView()
+        {
+            if (_characterModel.Direction.x == 0)
+                return;
+            
+            _animator.transform.localScale = new Vector3(Mathf.Sign(_characterModel.Direction.x), 1, 1);
+        }
+
+        private void SetAtkTrigger()
+        {
             _animator.SetTrigger(Atk);
+        }
+        
+        protected override void OnDispose()
+        {
+            _characterModel.OnAttack -= SetAtkTrigger;
         }
     }
 }

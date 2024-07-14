@@ -36,6 +36,7 @@ namespace Game.Scripts.Controllers
             _characterAnimationUpdater = new CharacterAnimationUpdater(_container.Animator, _playerModel);
             _inputProcessorController = new CharacterInputProcessorController(_playerModel, _inputManager);
             
+            _characterAnimationUpdater.Init();
             _characterPhysicsController.Init();
             _inputProcessorController.Init();
         }
@@ -55,6 +56,7 @@ namespace Game.Scripts.Controllers
         {
             _inputProcessorController?.Dispose();
             _characterPhysicsController?.Dispose();
+            _characterAnimationUpdater.Dispose();
         }
     }
 }

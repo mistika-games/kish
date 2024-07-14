@@ -28,7 +28,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
 
         public void PerformAttack()
         {
-            
+            Debug.Log("Performattack");
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Game.Scripts.Controllers.Input
         private void UpdateMovement(Vector2 direction)
         {
             _moveDirection = direction;
+            _characterModel.SetDirection(direction);
         }
 
         protected override void OnDispose()

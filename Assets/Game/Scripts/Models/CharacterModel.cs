@@ -12,10 +12,11 @@ namespace Game.Scripts.Models
         private CharacterModelDescription _characterModelDescription;
         public event Action OnJump;
         public event Action<Vector2> OnMove;
-        public event Action OnAttack; 
-        
+        public event Action OnAttack;
+
         public string Id { get; private set; }
-        public Vector2 Position { get;private set; }
+        public Vector2 Direction { get; private set; }
+        public Vector2 Position { get; private set; }
         public Vector2 Velocity { get; private set; }
         public bool IsGrounded { get; private set; }
 
@@ -24,15 +25,15 @@ namespace Game.Scripts.Models
         public float AttackCooldown => _characterModelDescription.AttackCooldown;
 
         public float LastAttackTs { get; set; }
-
-        public CharacterModel()
-        {
-            
-        }
         
         public void SetDescription(CharacterModelDescription characterModelDescription)
         {
             _characterModelDescription = characterModelDescription;
+        }
+
+        public void SetDirection(Vector2 direction)
+        {
+            Direction = direction;
         }
 
         public void SetVelocity(Vector2 velocity)
@@ -65,7 +66,5 @@ namespace Game.Scripts.Models
             LastAttackTs = Time.time;
             OnAttack?.Invoke();
         }
-
-
     }
 }

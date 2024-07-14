@@ -8,9 +8,10 @@ namespace Game.Scripts.Core
 
         public void Init()
         {
-            if (_isInited) return;
+            if (_isInited) 
+                return;
+            
             _isInited = true;
-
             OnInit();
         }
 
@@ -19,9 +20,10 @@ namespace Game.Scripts.Core
 
         public void Dispose()
         {
-            if (!_isInited) return;
+            if (!_isInited) 
+                return;
+            
             _isInited = false;
-
             OnDispose();
         }
     }
