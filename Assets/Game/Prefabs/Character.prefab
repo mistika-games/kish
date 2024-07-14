@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 8092194781727921770}
-  id: 
+  _characterModelDescription: {fileID: 11400000, guid: cca92ca4f0a4f6d41ab5a42a6186e9c7, type: 2}
 --- !u!114 &8092194781727921770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7cfb252da4419a9bb17545ee04fe31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionEffector: {fileID: 0}
+  InteractionEffector: {fileID: 7441699627858211838}
   Animator: {fileID: 8955634304827389257}
   Rigidbody2D: {fileID: 1150667387016294582}
   GroundedCollider: {fileID: 6844294291682556630}

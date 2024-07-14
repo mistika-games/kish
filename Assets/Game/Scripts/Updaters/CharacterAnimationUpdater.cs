@@ -27,7 +27,7 @@ namespace Game.Scripts.Updaters
             _animator.SetBool(Grounded, _characterModel.IsGrounded);
             _animator.SetFloat(HSpd, absX);
             _animator.SetFloat(VSpd, _characterModel.Velocity.y);
-            _animator.SetBool(Atk, _characterModel.IsAttacking);
+            _animator.SetTrigger(Atk);
         }
     }
 }

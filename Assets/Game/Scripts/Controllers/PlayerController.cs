@@ -1,6 +1,7 @@
 ﻿using Game.Scripts.Containers;
 using Game.Scripts.Controllers.Input;
 using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.ScriptableObjects;
 using Game.Scripts.Updaters;
 using UnityEngine;
 using VContainer;
@@ -18,8 +19,9 @@ namespace Game.Scripts.Controllers
 
         [SerializeField]
         private CharacterContainer _container;
-
-        [SerializeField] private string id;
+        
+        [SerializeField] 
+        private CharacterModelDescription _characterModelDescription;
 
         [Inject]
         public void Construct(InputManager inputManager, ICharacterModel playerModel, ICharacterPhysicsController characterPhysicsController)
@@ -27,7 +29,7 @@ namespace Game.Scripts.Controllers
             _inputManager = inputManager;
 
             _playerModel = playerModel;
-            _playerModel.SetId(id);
+            _playerModel.SetDescription(_characterModelDescription);
 
             _characterPhysicsController = characterPhysicsController;
             _characterPhysicsController.SetUp(playerModel, _container.Rigidbody2D, _container.GroundedCollider, _container.InteractionEffector);

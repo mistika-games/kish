@@ -1,6 +1,5 @@
 ﻿using Game.Scripts.Controllers.Interfaces;
 using Game.Scripts.Core;
-using Game.Scripts.ScriptableObjects;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
         private readonly ICharacterAttackPhysicsController _attackPhysicsController;
         private ICharacterModel _characterModel;
         
-        public CharacterPhysicsController(CharacterSettings characterSettings, ICharacterMovementPhysicsController movementPhysicsController, ICharacterAttackPhysicsController attackPhysicsController)
+        public CharacterPhysicsController(ICharacterMovementPhysicsController movementPhysicsController, ICharacterAttackPhysicsController attackPhysicsController)
         {
             _movementPhysicsController = movementPhysicsController;
             _attackPhysicsController = attackPhysicsController;

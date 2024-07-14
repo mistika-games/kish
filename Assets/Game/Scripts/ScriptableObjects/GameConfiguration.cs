@@ -7,6 +7,9 @@ namespace Game.Scripts.ScriptableObjects
     [CreateAssetMenu(fileName = "GameSettings", menuName = "Kish/Settings")]
     public class GameConfiguration : ScriptableObject
     {
+        public float Gravity2D = -15f;
+        public float HorizontalVelocityDamping = 10;
+        
         [Title("Levels")] [SerializeField] 
         public LevelNames LevelNames;
 
@@ -18,9 +21,7 @@ namespace Game.Scripts.ScriptableObjects
     public class CharacterSettings
     {
         public float HorizontalVelocityDamping = 5;
-        public float MaxSpeed = 7;
-        public float JumpForce = 15f;
-        public float Gravity2D = -10f;
+        public CharacterModelDescription _characterModelDescription;
     }
 
     [Serializable]

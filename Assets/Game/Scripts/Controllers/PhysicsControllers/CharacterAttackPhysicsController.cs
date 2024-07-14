@@ -28,10 +28,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
 
         public void PerformAttack()
         {
-            if (_characterModel.IsAttacking)
-            {
-                
-            }
+            
         }
     }
 }

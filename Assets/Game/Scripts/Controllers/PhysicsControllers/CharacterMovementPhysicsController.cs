@@ -11,17 +11,17 @@ namespace Game.Scripts.Controllers.PhysicsControllers
     {
         private readonly ContactFilter2D _contactFilter2D;
         private readonly Collider2D[] _overlapResults;
-        private readonly CharacterSettings _characterSettings;
+        private readonly float _horizontalVelocityDamping;
         
         private ICharacterModel _characterModel;
         private  Rigidbody2D _rigidbody2D;
         private  Collider2D _groundedCollider;
         
-        public CharacterMovementPhysicsController(CharacterSettings characterSettings)
+        public CharacterMovementPhysicsController(GameConfiguration gameConfiguration)
         {
             _overlapResults = new Collider2D[2];
             _contactFilter2D = new ContactFilter2D().NoFilter();
-            _characterSettings = characterSettings;
+            _horizontalVelocityDamping = gameConfiguration.HorizontalVelocityDamping;
         }
 
         public void SetUp(ICharacterModel characterModel, Rigidbody2D rigidbody2D, Collider2D groundedCollider)
@@ -51,7 +51,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
         private void TryPerformJump()
         {
             if (_characterModel.IsGrounded)
-                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _characterSettings.JumpForce);
+                _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _characterModel.JumpForce);
         }
 
         private void Attach()
@@ -62,7 +62,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
 
         private void PerformMovement(Vector2 inputValue)
         {
-            var xVelocity = Mathf.Lerp(_rigidbody2D.velocity.x, _characterSettings.MaxSpeed * inputValue.x, Time.deltaTime * _characterSettings.HorizontalVelocityDamping);
+            var xVelocity = Mathf.Lerp(_rigidbody2D.velocity.x, _characterModel.MaxSpeed * inputValue.x, Time.deltaTime * _horizontalVelocityDamping);
             _rigidbody2D.velocity = new Vector2(xVelocity, _rigidbody2D.velocity.y);
         }
 
