@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputManager: {fileID: 1092310621799591674, guid: b73501aa9ee0c854ebb75422da725ca7, type: 3}
   Player: {fileID: 1506217940563974255, guid: 19dda145925ee824f9d26c0232a4a3ac, type: 3}
+  FollowCamera: {fileID: 2175804091033941378, guid: b985e33f5a9b95b48ad3fc6a916e1cb0, type: 3}
   GameConfiguration: {fileID: 11400000, guid: ffea01b7aeb88dd4287f3c33d8576eab, type: 2}

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Game.Scripts.Camera;
+using Game.Scripts.Controllers;
+using UnityEngine;
 
 namespace Game.Scripts.ScriptableObjects
 {
@@ -7,6 +9,7 @@ namespace Game.Scripts.ScriptableObjects
     {
         public InputManager InputManager;
         public PlayerController Player;
+        public CameraInjector FollowCamera;
 
         public GameConfiguration GameConfiguration;
     }

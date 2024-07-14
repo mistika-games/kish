@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterSettings:
     HorizontalVelocityDamping: 10
-    MaxSpeed: 3.5
-    JumpForce: 5
+    MaxSpeed: 2.5
+    JumpForce: 7
+    Gravity2D: -15

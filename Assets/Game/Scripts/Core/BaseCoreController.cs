@@ -1,6 +1,8 @@
-﻿namespace Game.Scripts.Core
+﻿using Game.Scripts.Controllers.Interfaces;
+
+namespace Game.Scripts.Core
 {
-    public abstract class BaseCoreController
+    public abstract class BaseCoreController : ICoreController
     {
         private bool _isInited;
 

@@ -1,4 +1,4 @@
-using Game.Scripts.Models;
+using Game.Scripts.Controllers.Interfaces;
 using UnityEngine;
 
 namespace Game.Scripts.Updaters
@@ -21,8 +21,11 @@ namespace Game.Scripts.Updaters
 
         public void Update()
         {
+            var absX = Mathf.Abs(_characterModel.Velocity.x);
+            if (absX>1)
+                _animator.transform.localScale = new Vector3(1 * (Mathf.Sign(_characterModel.Velocity.x)), 1, 1);
             _animator.SetBool(Grounded, _characterModel.IsGrounded);
-            _animator.SetFloat(HSpd, _characterModel.Velocity.x);
+            _animator.SetFloat(HSpd, absX);
             _animator.SetFloat(VSpd, _characterModel.Velocity.y);
             _animator.SetBool(Atk, _characterModel.IsAttacking);
         }
