@@ -56,7 +56,7 @@ namespace Game.Scripts.Controllers
         {
             _inputProcessorController?.Dispose();
             _characterPhysicsController?.Dispose();
-            _characterAnimationUpdater.Dispose();
+            _characterAnimationUpdater?.Dispose();
         }
     }
 }

@@ -14,12 +14,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
         {
             _characterModel.OnAttack += PerformAttack;
         }
-
-        public void Dispose()
-        {
-            _characterModel.OnAttack -= PerformAttack;
-        }
-
+        
         public void SetUp(ICharacterModel characterModel, Effector2D effector2D)
         {
             _characterModel = characterModel;
@@ -28,7 +23,12 @@ namespace Game.Scripts.Controllers.PhysicsControllers
 
         public void PerformAttack()
         {
-            Debug.Log("Performattack");
+         Debug.Log("Perform Attack");
+        }
+        
+        public void Dispose()
+        {
+            _characterModel.OnAttack -= PerformAttack;
         }
     }
 }

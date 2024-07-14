@@ -8,5 +8,7 @@ namespace Game.Scripts.Containers
         public Animator Animator;
         public Rigidbody2D Rigidbody2D;
         public Collider2D GroundedCollider;
+        
+        //добавить effectorAttackView
     }
 }
