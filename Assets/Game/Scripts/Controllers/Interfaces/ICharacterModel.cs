@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Game.Scripts.Models
+namespace Game.Scripts.Controllers.Interfaces
 {
     public interface ICharacterModel
     {

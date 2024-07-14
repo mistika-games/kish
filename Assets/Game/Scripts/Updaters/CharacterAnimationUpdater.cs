@@ -1,4 +1,4 @@
-using Game.Scripts.Models;
+using Game.Scripts.Controllers.Interfaces;
 using UnityEngine;
 
 namespace Game.Scripts.Updaters

@@ -29,7 +29,6 @@ namespace Game.Scripts
 
         private void OnFire()
         {
-            Debug.Log("fire");
             OnAttack?.Invoke();
         }
     }

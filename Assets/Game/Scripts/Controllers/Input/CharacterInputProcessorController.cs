@@ -1,15 +1,14 @@
-﻿using Game.Scripts.Core;
-using Game.Scripts.Models;
+﻿using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Core;
 using UnityEngine;
 
-namespace Game.Scripts.Controller
+namespace Game.Scripts.Controllers.Input
 {
     public class CharacterInputProcessorController : BaseCoreController
     {
         private readonly ICharacterModel _characterModel;
         private readonly InputManager _inputManager;
         private Vector2 _moveDirection;
-        
 
         public CharacterInputProcessorController (ICharacterModel characterModel, InputManager inputManager)
         {

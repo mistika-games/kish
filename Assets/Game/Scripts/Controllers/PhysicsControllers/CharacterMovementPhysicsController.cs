@@ -1,19 +1,13 @@
-﻿using Game.Scripts.Core;
-using Game.Scripts.Models;
+﻿using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Core;
 using Game.Scripts.ScriptableObjects;
+using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Game.Scripts.Controllers
+namespace Game.Scripts.Controllers.PhysicsControllers
 {
-    public interface ICharacterPhysicsController
-    {
-        void Update();
-        void Init();
-        void Dispose();
-        void SetUp(ICharacterModel characterModel, Rigidbody2D rigidbody2D, Collider2D groundedCollider);
-    }
-
-    public class CharacterPhysicsController : BaseCoreController, ICharacterPhysicsController
+    [UsedImplicitly]
+    public class CharacterMovementPhysicsController : BaseCoreController, ICharacterMovementPhysicsController
     {
         private readonly ContactFilter2D _contactFilter2D;
         private readonly Collider2D[] _overlapResults;
@@ -23,7 +17,7 @@ namespace Game.Scripts.Controllers
         private  Rigidbody2D _rigidbody2D;
         private  Collider2D _groundedCollider;
         
-        public CharacterPhysicsController( CharacterSettings characterSettings)
+        public CharacterMovementPhysicsController(CharacterSettings characterSettings)
         {
             _overlapResults = new Collider2D[2];
             _contactFilter2D = new ContactFilter2D().NoFilter();
@@ -42,7 +36,7 @@ namespace Game.Scripts.Controllers
             Attach();
         }
 
-        public void Update()
+        public void FixedUpdate()
         {
             _characterModel.SetVelocity(_rigidbody2D.velocity);
             _characterModel.SetPosition(_rigidbody2D.transform.position);
@@ -68,7 +62,6 @@ namespace Game.Scripts.Controllers
 
         private void PerformMovement(Vector2 inputValue)
         {
-            Debug.Log($"performMovement: {inputValue}");
             var xVelocity = Mathf.Lerp(_rigidbody2D.velocity.x, _characterSettings.MaxSpeed * inputValue.x, Time.deltaTime * _characterSettings.HorizontalVelocityDamping);
             _rigidbody2D.velocity = new Vector2(xVelocity, _rigidbody2D.velocity.y);
         }

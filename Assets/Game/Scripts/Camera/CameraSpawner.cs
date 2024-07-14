@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Scripts.Controllers;
+using UnityEngine;
 using VContainer;
 
 namespace Game.Scripts.Camera

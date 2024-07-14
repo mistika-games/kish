@@ -1,9 +1,8 @@
-﻿using Game.Scripts.Controllers;
+﻿using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Controllers.PhysicsControllers;
 using Game.Scripts.Models;
 using Game.Scripts.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
 
@@ -21,14 +20,8 @@ namespace Game.Scripts.LifetimeScopes
             builder.RegisterInstance(_catalog.GameConfiguration.CharacterSettings);
             builder.Register<ICharacterModel, CharacterModel>(Lifetime.Transient);
             builder.Register<ICharacterPhysicsController, CharacterPhysicsController>(Lifetime.Transient);
-        }
-    }
-
-    public class LoaderEntryPoint : IStartable
-    {
-        public void Start()
-        {
-            Addressables.LoadSceneAsync("level_1", LoadSceneMode.Additive);
+            builder.Register<ICharacterAttackPhysicsController, CharacterAttackPhysicsController>(Lifetime.Transient);
+            builder.Register<ICharacterMovementPhysicsController, CharacterMovementPhysicsController>(Lifetime.Transient);
         }
     }
 }
