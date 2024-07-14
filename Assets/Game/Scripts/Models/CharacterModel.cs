@@ -13,8 +13,7 @@ namespace Game.Scripts.Models
         public event Action OnJump;
         public event Action<Vector2> OnMove;
         public event Action OnAttack;
-
-        public string Id { get; private set; }
+        
         public Vector2 Direction { get; private set; }
         public Vector2 Position { get; private set; }
         public Vector2 Velocity { get; private set; }
@@ -24,7 +23,7 @@ namespace Game.Scripts.Models
         public float MaxSpeed => _characterModelDescription.MaxMovementSpeed;
         public float AttackCooldown => _characterModelDescription.AttackCooldown;
 
-        public float LastAttackTs { get; set; }
+        private float _lastAttackTs;
         
         public void SetDescription(CharacterModelDescription characterModelDescription)
         {
@@ -63,8 +62,11 @@ namespace Game.Scripts.Models
 
         public void Attack()
         {
-            LastAttackTs = Time.time;
+            if (!(Time.time > _lastAttackTs + AttackCooldown)) 
+                return;
+            
             OnAttack?.Invoke();
+            _lastAttackTs = Time.time;
         }
     }
 }

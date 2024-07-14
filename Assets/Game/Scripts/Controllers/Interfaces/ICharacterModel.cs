@@ -13,7 +13,6 @@ namespace Game.Scripts.Controllers.Interfaces
         public float JumpForce { get; }
         public float MaxSpeed { get; }
         public float AttackCooldown { get; }
-        public string Id { get; }
         public Vector2 Direction { get; }
         
         Vector2 Position { get; }
