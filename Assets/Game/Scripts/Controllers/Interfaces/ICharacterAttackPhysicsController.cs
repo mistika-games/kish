@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using Game.Scripts.Containers;
+
 
 namespace Game.Scripts.Controllers.Interfaces
 {
     public interface ICharacterAttackPhysicsController : ICoreController
     {
-        void SetUp(ICharacterModel characterModel,Effector2D effector2D);
+        void SetUp(ICharacterModel characterModel, IAttackBehaviour _attackBehaviour);
         void PerformAttack();
     }
 }

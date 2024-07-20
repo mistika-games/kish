@@ -1,4 +1,5 @@
-﻿using Game.Scripts.Controllers.Interfaces;
+﻿using Game.Scripts.Containers;
+using Game.Scripts.Controllers.Interfaces;
 using Game.Scripts.Core;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -18,11 +19,11 @@ namespace Game.Scripts.Controllers.PhysicsControllers
             _attackPhysicsController = attackPhysicsController;
         }
         
-        public void SetUp(ICharacterModel characterModel, Rigidbody2D rigidbody2D, Collider2D groundedCollider, Effector2D interactionEffector)
+        public void SetUp(ICharacterModel characterModel, Rigidbody2D rigidbody2D, Collider2D groundedCollider, IAttackBehaviour physicsAttackBehaviour)
         {
             _characterModel = characterModel;
             _movementPhysicsController.SetUp(_characterModel, rigidbody2D,groundedCollider);
-            _attackPhysicsController.SetUp(_characterModel, interactionEffector);
+            _attackPhysicsController.SetUp(_characterModel, physicsAttackBehaviour);
         }
 
         public void FixedUpdate()

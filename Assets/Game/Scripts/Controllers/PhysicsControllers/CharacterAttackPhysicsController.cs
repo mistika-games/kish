@@ -1,4 +1,5 @@
-﻿using Game.Scripts.Controllers.Interfaces;
+﻿using Game.Scripts.Containers;
+using Game.Scripts.Controllers.Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -8,22 +9,22 @@ namespace Game.Scripts.Controllers.PhysicsControllers
     public class CharacterAttackPhysicsController : ICharacterAttackPhysicsController
     {
         private ICharacterModel _characterModel;
-        private Effector2D _effector2D;
+        private IAttackBehaviour _attackBehaviour;
         
         public void Init()
         {
             _characterModel.OnAttack += PerformAttack;
         }
         
-        public void SetUp(ICharacterModel characterModel, Effector2D effector2D)
+        public void SetUp(ICharacterModel characterModel, IAttackBehaviour attackBehaviour)
         {
             _characterModel = characterModel;
-            _effector2D = effector2D;
+            _attackBehaviour = attackBehaviour;
         }
 
         public void PerformAttack()
         {
-         Debug.Log("Perform Attack");
+         _attackBehaviour.PerformAttack();
         }
         
         public void Dispose()

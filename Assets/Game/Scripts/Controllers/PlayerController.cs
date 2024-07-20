@@ -15,6 +15,7 @@ namespace Game.Scripts.Controllers
         private CharacterAnimationUpdater _characterAnimationUpdater;
         private ICharacterPhysicsController _characterPhysicsController;
         private CharacterInputProcessorController _inputProcessorController;
+        private CharacterHorizontalFlipController _characterHorizontalFlipController;
         private InputManager _inputManager;
 
         [SerializeField]
@@ -32,9 +33,13 @@ namespace Game.Scripts.Controllers
             _playerModel.SetDescription(_characterModelDescription);
 
             _characterPhysicsController = characterPhysicsController;
-            _characterPhysicsController.SetUp(playerModel, _container.Rigidbody2D, _container.GroundedCollider, _container.InteractionEffector);
-            _characterAnimationUpdater = new CharacterAnimationUpdater(_container.Animator, _playerModel);
+            _characterPhysicsController.SetUp(playerModel, _container.Rigidbody2D, _container.GroundedCollider, _container.PhysicsAttackBehaviour);
+            _characterHorizontalFlipController = new CharacterHorizontalFlipController(_playerModel);
+            _characterAnimationUpdater = new CharacterAnimationUpdater(_container.Animator, _playerModel, _characterHorizontalFlipController);
             _inputProcessorController = new CharacterInputProcessorController(_playerModel, _inputManager);
+            
+            _characterHorizontalFlipController.FlipRight += _container.HorizontalFlipBehaviour.FlipRight;
+            _characterHorizontalFlipController.FlipLeft += _container.HorizontalFlipBehaviour.FlipLeft;
             
             _characterAnimationUpdater.Init();
             _characterPhysicsController.Init();
@@ -43,6 +48,7 @@ namespace Game.Scripts.Controllers
 
         public void Update()
         {
+            _characterHorizontalFlipController.Update();
             _characterAnimationUpdater.Update();
             _inputProcessorController.Update();
         }
@@ -54,6 +60,9 @@ namespace Game.Scripts.Controllers
 
         public void OnDestroy()
         {
+            _characterHorizontalFlipController.FlipRight -= _container.HorizontalFlipBehaviour.FlipRight;
+            _characterHorizontalFlipController.FlipLeft -= _container.HorizontalFlipBehaviour.FlipLeft;
+            
             _inputProcessorController?.Dispose();
             _characterPhysicsController?.Dispose();
             _characterAnimationUpdater?.Dispose();
