@@ -9,6 +9,7 @@ namespace Game.Scripts.ScriptableObjects
     {
         public float Gravity2D = -15f;
         public float HorizontalVelocityDamping = 10;
+        public LayerMask GroundedLayerMask;
         
         [Title("Levels")] [SerializeField] 
         public LevelNames LevelNames;

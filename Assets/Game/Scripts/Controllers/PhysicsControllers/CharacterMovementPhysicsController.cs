@@ -16,12 +16,12 @@ namespace Game.Scripts.Controllers.PhysicsControllers
         private ICharacterModel _characterModel;
         private  Rigidbody2D _rigidbody2D;
         private  Collider2D _groundedCollider;
-        
+
         public CharacterMovementPhysicsController(GameConfiguration gameConfiguration)
         {
-            _overlapResults = new Collider2D[2];
-            _contactFilter2D = new ContactFilter2D().NoFilter();
+            _overlapResults = new Collider2D[1];
             _horizontalVelocityDamping = gameConfiguration.HorizontalVelocityDamping;
+            _contactFilter2D = new ContactFilter2D() { useLayerMask = true, layerMask = gameConfiguration.GroundedLayerMask };
         }
 
         public void SetUp(ICharacterModel characterModel, Rigidbody2D rigidbody2D, Collider2D groundedCollider)
@@ -45,7 +45,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
 
         private bool CalculateGrounded()
         {
-            return Physics2D.OverlapCollider(_groundedCollider, _contactFilter2D, _overlapResults) > 1;
+            return Physics2D.OverlapCollider(_groundedCollider, _contactFilter2D, _overlapResults) > 0;
         }
 
         private void TryPerformJump()

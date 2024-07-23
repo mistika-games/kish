@@ -44,10 +44,10 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 55
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 6037931414197026330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionEffector: {fileID: 7441699627858211838}
-  duration: 0.1
+  duration: 0.05
 --- !u!250 &7441699627858211838
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -229,17 +229,17 @@ PointEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6037931414197026330}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: 10
+  m_ForceMagnitude: 200
   m_ForceVariation: 0
   m_DistanceScale: 1
-  m_ForceSource: 0
-  m_ForceTarget: 0
-  m_ForceMode: 0
+  m_ForceSource: 1
+  m_ForceTarget: 1
+  m_ForceMode: 1
   m_Drag: 0
   m_AngularDrag: 0
 --- !u!70 &2828803986002880216
@@ -274,7 +274,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4, y: 0}
+  m_Offset: {x: 0.4, y: 0.5}
   m_Size: {x: 0.8, y: 1.5}
   m_Direction: 0
 --- !u!212 &4166908478368913293

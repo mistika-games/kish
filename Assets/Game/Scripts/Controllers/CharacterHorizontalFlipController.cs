@@ -1,6 +1,5 @@
 ﻿using System;
 using Game.Scripts.Controllers.Interfaces;
-using UnityEngine;
 
 namespace Game.Scripts.Controllers
 {

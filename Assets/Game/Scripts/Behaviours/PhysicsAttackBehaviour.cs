@@ -12,8 +12,7 @@ namespace Game.Scripts.Behaviours
         
         public void PerformAttack()
         {
-            if (_attackCoroutine is not null)
-                _attackCoroutine =  StartCoroutine(AttackCoroutine());
+            _attackCoroutine ??= StartCoroutine(AttackCoroutine());
         }
 
         private IEnumerator AttackCoroutine()
@@ -21,6 +20,7 @@ namespace Game.Scripts.Behaviours
             InteractionEffector.enabled = true;
             yield return new WaitForSeconds(duration);
             InteractionEffector.enabled = false;
+            _attackCoroutine = null;
         }
     }
 }
