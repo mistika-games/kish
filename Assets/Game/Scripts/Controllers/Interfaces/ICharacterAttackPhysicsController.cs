@@ -1,7 +1,4 @@
-﻿using Game.Scripts.Containers;
-
-
-namespace Game.Scripts.Controllers.Interfaces
+﻿namespace Game.Scripts.Controllers.Interfaces
 {
     public interface ICharacterAttackPhysicsController : ICoreController
     {

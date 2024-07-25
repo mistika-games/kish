@@ -1,26 +1,46 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using Game.Scripts.Containers;
+using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Structs;
 using UnityEngine;
 
 namespace Game.Scripts.Behaviours
 {
     public class PhysicsAttackBehaviour : MonoBehaviour , IAttackBehaviour
     {
-        private Coroutine _attackCoroutine;
         public Effector2D InteractionEffector;
         public float duration = 0.1f;
+
+        private List<IHitInteractable> _interactableObjects;
         
-        public void PerformAttack()
+        public void PerformAttack(IInteractionSourceData sourceData)
         {
-            _attackCoroutine ??= StartCoroutine(AttackCoroutine());
+            var interactionParameters = new PhysicsInteractionParameters()
+            {
+                SourceData = sourceData,
+                InteractionPoint = transform.position
+            };
+            
+            foreach (var interactable in _interactableObjects)
+            {
+                interactable.InteractWithHit(interactionParameters);
+            }
         }
 
-        private IEnumerator AttackCoroutine()
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            InteractionEffector.enabled = true;
-            yield return new WaitForSeconds(duration);
-            InteractionEffector.enabled = false;
-            _attackCoroutine = null;
+            if (other.gameObject.GetComponent<IHitInteractable>() is { } interactable )
+            {
+                _interactableObjects.Add(interactable);
+            }
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (other.gameObject.GetComponent<IHitInteractable>() is { } interactable && _interactableObjects.Contains(interactable))
+            {
+                _interactableObjects.Remove(interactable);
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿namespace Game.Scripts.Containers
+﻿namespace Game.Scripts.Controllers.Interfaces
 {
     public interface IAttackBehaviour
     {
-        void PerformAttack();
+        void PerformAttack(IInteractionSourceData interactionSourceData);
     }
 }

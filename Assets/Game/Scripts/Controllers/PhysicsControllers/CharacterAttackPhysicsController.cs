@@ -1,7 +1,8 @@
-﻿using Game.Scripts.Containers;
+﻿using Game.Scripts.Behaviours;
+using Game.Scripts.Containers;
 using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Structs;
 using JetBrains.Annotations;
-using UnityEngine;
 
 namespace Game.Scripts.Controllers.PhysicsControllers
 {
@@ -24,7 +25,13 @@ namespace Game.Scripts.Controllers.PhysicsControllers
 
         public void PerformAttack()
         {
-         _attackBehaviour.PerformAttack();
+            var interactionSourceData = new SourceInteractionData()
+            {
+                SourcePosition = _characterModel.Position,
+                SourceVelocity = _characterModel.Velocity
+            };
+            
+            _attackBehaviour.PerformAttack(interactionSourceData);
         }
         
         public void Dispose()
