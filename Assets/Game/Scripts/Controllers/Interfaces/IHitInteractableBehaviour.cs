@@ -1,6 +1,6 @@
 ﻿namespace Game.Scripts.Controllers.Interfaces
 {
-    public interface IHitInteractable
+    public interface IHitInteractableBehaviour
     {
         void InteractWithHit(IInteractionParameters interactionParameters);
     }

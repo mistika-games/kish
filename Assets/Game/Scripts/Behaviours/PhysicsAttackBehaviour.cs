@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Game.Scripts.Containers;
 using Game.Scripts.Controllers.Interfaces;
 using Game.Scripts.Structs;
 using UnityEngine;
@@ -8,10 +7,7 @@ namespace Game.Scripts.Behaviours
 {
     public class PhysicsAttackBehaviour : MonoBehaviour , IAttackBehaviour
     {
-        public Effector2D InteractionEffector;
-        public float duration = 0.1f;
-
-        private List<IHitInteractable> _interactableObjects;
+        private readonly List<IHitInteractableBehaviour> _interactableObjects = new();
         
         public void PerformAttack(IInteractionSourceData sourceData)
         {
@@ -27,20 +23,25 @@ namespace Game.Scripts.Behaviours
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.GetComponent<IHitInteractable>() is { } interactable )
+            if (other.GetComponent<IHitInteractableBehaviour>() is { } interactable )
             {
                 _interactableObjects.Add(interactable);
             }
         }
 
-        private void OnCollisionExit(Collision other)
+        private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.gameObject.GetComponent<IHitInteractable>() is { } interactable && _interactableObjects.Contains(interactable))
+            if (other.GetComponent<IHitInteractableBehaviour>() is { } interactable && _interactableObjects.Contains(interactable))
             {
                 _interactableObjects.Remove(interactable);
             }
+        }
+
+        private void OnDestroy()
+        {
+            _interactableObjects.Clear();
         }
     }
 }
