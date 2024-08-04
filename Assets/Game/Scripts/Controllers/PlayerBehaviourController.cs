@@ -9,7 +9,7 @@ using VContainer;
 namespace Game.Scripts.Controllers
 {
     [RequireComponent(typeof(CharacterContainer))]
-    public class PlayerController : MonoBehaviour 
+    public class PlayerBehaviourController : MonoBehaviour 
     {
         private ICharacterModel _playerModel;
         private CharacterAnimationUpdater _characterAnimationUpdater;

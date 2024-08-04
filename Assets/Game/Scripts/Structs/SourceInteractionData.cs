@@ -5,6 +5,7 @@ namespace Game.Scripts.Structs
 {
     public struct SourceInteractionData : IInteractionSourceData
     {
+        public float SourceStrength { get; internal set; }
         public Vector3 SourcePosition { get; internal set; }
         public Vector2 SourceVelocity { get; internal set; }
     }

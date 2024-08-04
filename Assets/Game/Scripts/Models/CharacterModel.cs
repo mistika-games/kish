@@ -23,6 +23,8 @@ namespace Game.Scripts.Models
         public float MaxSpeed => _characterModelDescription.MaxMovementSpeed;
         public float AttackCooldown => _characterModelDescription.AttackCooldown;
 
+        public float Strength => 1;
+
         private float _lastAttackTs;
         
         public void SetDescription(CharacterModelDescription characterModelDescription)

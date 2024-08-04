@@ -8,7 +8,7 @@ namespace Game.Scripts.ScriptableObjects
     public class Catalog : ScriptableObject
     {
         public InputManager InputManager;
-        public PlayerController Player;
+        public PlayerBehaviourController _playerBehaviour;
         public CameraInjector FollowCamera;
 
         public GameConfiguration GameConfiguration;

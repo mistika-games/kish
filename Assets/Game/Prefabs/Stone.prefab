@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2760314103204313638}
+  - component: {fileID: 991699192022783251}
+  - component: {fileID: 8245146790029898180}
   - component: {fileID: 7362997212287250345}
   - component: {fileID: 8851490014452757875}
   - component: {fileID: 5662248706884655278}
-  - component: {fileID: 2954830348752605805}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &991699192022783251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324918617385236311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4466749fa2f40b0be7edb8549467104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stoneModelDescription: {fileID: 11400000, guid: 352fd219c61a3b249ab95f110445ccb8, type: 2}
+  _stoneBehaviourContainer: {fileID: 8245146790029898180}
+--- !u!114 &8245146790029898180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324918617385236311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519496f8733d40a7a7968504b2e4d33d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rigidbody2D: {fileID: 5662248706884655278}
 --- !u!212 &7362997212287250345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -167,17 +195,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2954830348752605805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8324918617385236311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fe501e57caf4a74804a8e83c28fc647, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionStrength: 5
-  _rigidbody2D: {fileID: 5662248706884655278}

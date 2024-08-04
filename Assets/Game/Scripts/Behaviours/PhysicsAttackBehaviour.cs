@@ -7,7 +7,7 @@ namespace Game.Scripts.Behaviours
 {
     public class PhysicsAttackBehaviour : MonoBehaviour , IAttackBehaviour
     {
-        private readonly List<IHitInteractableBehaviour> _interactableObjects = new();
+        private readonly List<IInteractableHit> _interactableObjects = new();
         
         public void PerformAttack(IInteractionSourceData sourceData)
         {
@@ -25,7 +25,7 @@ namespace Game.Scripts.Behaviours
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.GetComponent<IHitInteractableBehaviour>() is { } interactable )
+            if (other.GetComponent<IInteractableHit>() is { } interactable )
             {
                 _interactableObjects.Add(interactable);
             }
@@ -33,7 +33,7 @@ namespace Game.Scripts.Behaviours
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.GetComponent<IHitInteractableBehaviour>() is { } interactable && _interactableObjects.Contains(interactable))
+            if (other.GetComponent<IInteractableHit>() is { } interactable && _interactableObjects.Contains(interactable))
             {
                 _interactableObjects.Remove(interactable);
             }

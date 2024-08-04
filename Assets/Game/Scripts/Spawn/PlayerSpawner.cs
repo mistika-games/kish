@@ -7,9 +7,9 @@ namespace Game.Scripts.Spawn
     public class PlayerSpawner : MonoBehaviour
     {
         [Inject]
-        public void Construct(PlayerController playerController)
+        public void Construct(PlayerBehaviourController playerBehaviourController)
         {
-            playerController.transform.position = transform.position;
+            playerBehaviourController.transform.position = transform.position;
         }
     }
 }

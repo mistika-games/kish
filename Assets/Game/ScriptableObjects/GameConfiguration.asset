@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2062821853a0a1d43a0c08edae94aad4, type: 3}
   m_Name: GameConfiguration
   m_EditorClassIdentifier: 
-  Gravity2D: -15
+  Gravity2D: -17
   HorizontalVelocityDamping: 10
   GroundedLayerMask:
     serializedVersion: 2

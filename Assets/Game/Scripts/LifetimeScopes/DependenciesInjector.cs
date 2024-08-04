@@ -14,7 +14,7 @@ namespace Game.Scripts.LifetimeScopes
         
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterComponentInNewPrefab(_catalog.Player, Lifetime.Scoped);
+            builder.RegisterComponentInNewPrefab(_catalog._playerBehaviour, Lifetime.Scoped);
             builder.RegisterComponentInNewPrefab(_catalog.InputManager, Lifetime.Scoped);
             builder.RegisterComponentInNewPrefab(_catalog.FollowCamera, Lifetime.Scoped);
             builder.RegisterInstance(_catalog.GameConfiguration);

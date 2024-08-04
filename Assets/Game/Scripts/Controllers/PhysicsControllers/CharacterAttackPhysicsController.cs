@@ -1,6 +1,4 @@
-﻿using Game.Scripts.Behaviours;
-using Game.Scripts.Containers;
-using Game.Scripts.Controllers.Interfaces;
+﻿using Game.Scripts.Controllers.Interfaces;
 using Game.Scripts.Structs;
 using JetBrains.Annotations;
 
@@ -28,7 +26,8 @@ namespace Game.Scripts.Controllers.PhysicsControllers
             var interactionSourceData = new SourceInteractionData()
             {
                 SourcePosition = _characterModel.Position,
-                SourceVelocity = _characterModel.Velocity
+                SourceVelocity = _characterModel.Velocity,
+                SourceStrength = _characterModel.Strength
             };
             
             _attackBehaviour.PerformAttack(interactionSourceData);

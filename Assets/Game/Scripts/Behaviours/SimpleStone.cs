@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.Scripts.Behaviours
 {
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
-    public class SimpleStoneBehaviour : MonoBehaviour, IHitInteractableBehaviour
+    public class SimpleStone : MonoBehaviour, IInteractableHit
     {
         [SerializeField] private float interactionStrength;
         [SerializeField] private Rigidbody2D _rigidbody2D;

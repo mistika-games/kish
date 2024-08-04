@@ -7,9 +7,9 @@ namespace Game.Scripts.Camera
     public class CameraSpawner : MonoBehaviour
     {
         [Inject]
-        void Construct(PlayerController playerController, CameraInjector cameraInjector)
+        void Construct(PlayerBehaviourController playerBehaviourController, CameraInjector cameraInjector)
         {
-            cameraInjector.CinemachineVirtualCamera.Follow = playerController.transform;
+            cameraInjector.CinemachineVirtualCamera.Follow = playerBehaviourController.transform;
             cameraInjector.transform.position = transform.position;
         }
     }

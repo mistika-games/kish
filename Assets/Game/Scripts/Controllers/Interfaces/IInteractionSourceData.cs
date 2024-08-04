@@ -6,5 +6,6 @@ namespace Game.Scripts.Controllers.Interfaces
     {
         Vector3 SourcePosition { get; }
         Vector2 SourceVelocity { get; }
+        float SourceStrength { get; }
     }
 }
