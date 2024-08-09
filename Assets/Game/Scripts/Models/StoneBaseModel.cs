@@ -3,10 +3,10 @@ using Game.Scripts.ScriptableObjects;
 
 namespace Game.Scripts.Models
 {
-    public abstract class StoneBaseModel 
+    public abstract class StoneBaseModel : IStoneModel
     {
-        public event Action Crush;
-        public event Action<int, int> HpChange;
+        public event Action Crushed;
+        public event Action<int, int> Damaged;
 
         public int Durability
         {
@@ -15,11 +15,11 @@ namespace Game.Scripts.Models
             {
                 var oldValue = _currentDurability;
                 _currentDurability = value;
-                HpChange?.Invoke(oldValue, _currentDurability);
+                Damaged?.Invoke(oldValue, _currentDurability);
 
                 if (_currentDurability <= 0)
                 {
-                    Crush?.Invoke();
+                    Crushed?.Invoke();
                 }
             }
         }
@@ -29,13 +29,19 @@ namespace Game.Scripts.Models
 
         protected StoneBaseModel(StoneModelDescription stoneModelDescription)
         {
-            _currentDurability = stoneModelDescription.MaxHp;
             Mass = stoneModelDescription.Mass;
+            _currentDurability = stoneModelDescription.MaxHp;
         }
 
-        public void TakeDamage(int damageTaken)
+        public void TakeDamage(int damageTaken = 1)
         {
             Durability -= damageTaken;
+        }
+
+        public void Rebuild(StoneModelDescription stoneModelDescription)
+        {
+            Mass = stoneModelDescription.Mass;
+            _currentDurability = stoneModelDescription.MaxHp;
         }
     }
 }

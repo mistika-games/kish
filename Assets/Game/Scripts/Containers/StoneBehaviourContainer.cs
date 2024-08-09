@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Scripts.Containers
 {
@@ -6,9 +7,8 @@ namespace Game.Scripts.Containers
     {
         public Rigidbody2D Rigidbody2D;
         
-        private void Reset()
-        {
-            Rigidbody2D = GetComponent<Rigidbody2D>();
-        }
+        public UnityEvent SpawnEvent;
+        public UnityEvent HitEvent;
+        public UnityEvent CrushEvent;
     }
 }

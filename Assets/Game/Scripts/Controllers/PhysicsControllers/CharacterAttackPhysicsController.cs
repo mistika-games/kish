@@ -25,6 +25,7 @@ namespace Game.Scripts.Controllers.PhysicsControllers
         {
             var interactionSourceData = new SourceInteractionData()
             {
+                SourceDamage = 1,
                 SourcePosition = _characterModel.Position,
                 SourceVelocity = _characterModel.Velocity,
                 SourceStrength = _characterModel.Strength

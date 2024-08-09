@@ -21,4 +21,4 @@ MonoBehaviour:
     Level1: level_1
   CharacterSettings:
     HorizontalVelocityDamping: 10
-    _characterModelDescription: {fileID: 0}
+    _characterModelDescription: {fileID: 11400000, guid: cca92ca4f0a4f6d41ab5a42a6186e9c7, type: 2}

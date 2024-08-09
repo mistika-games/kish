@@ -1,5 +1,4 @@
-﻿using Game.Scripts.Behaviours;
-using Game.Scripts.ScriptableObjects;
+﻿using Game.Scripts.ScriptableObjects;
 
 namespace Game.Scripts.Models
 {

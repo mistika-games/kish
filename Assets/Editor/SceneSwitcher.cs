@@ -25,6 +25,12 @@ namespace Editor
         {
             Selection.activeObject = AssetDatabase.LoadMainAssetAtPath("Assets/Game/Prefabs/Character.prefab");
         }
+        
+        [MenuItem("Select/Stone")]
+        public static void SelectStone()
+        {
+            Selection.activeObject = AssetDatabase.LoadMainAssetAtPath("Assets/Game/Prefabs/Stone.prefab");
+        }
 
         private static Scene OpenScene(string scenePath, OpenSceneMode openSceneMode = OpenSceneMode.Single)
         {
