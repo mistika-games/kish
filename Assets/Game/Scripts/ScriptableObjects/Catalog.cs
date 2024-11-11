@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using Game.Scripts.Behaviours;
+using Game.Scripts.Camera;
+using Game.Scripts.Controllers;
+using UnityEngine;
 
 namespace Game.Scripts.ScriptableObjects
 {
@@ -6,7 +9,9 @@ namespace Game.Scripts.ScriptableObjects
     public class Catalog : ScriptableObject
     {
         public InputManager InputManager;
-        public PlayerController Player;
+        public PlayerBehaviourController PlayerBehaviour;
+        public CameraInjector FollowCamera;
+        public StoneBehaviourController StoneBehaviourController;
 
         public GameConfiguration GameConfiguration;
     }

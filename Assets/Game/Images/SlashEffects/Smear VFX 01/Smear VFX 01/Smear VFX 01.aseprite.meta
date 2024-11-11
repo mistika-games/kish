@@ -332,6 +332,7 @@ ScriptedImporter:
     cells:
     - name: Smear VFX 01_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 34
@@ -340,6 +341,7 @@ ScriptedImporter:
       spriteId: 0f3073c0d490d084eaeddc63432ab53f
     - name: Smear VFX 01_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 19
@@ -348,6 +350,7 @@ ScriptedImporter:
       spriteId: c879b71e3d0905040a0d96f3f3e7894c
     - name: Smear VFX 01_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 11
@@ -356,6 +359,7 @@ ScriptedImporter:
       spriteId: 80c894aac2874fa4195268e8f21c4b71
     - name: Smear VFX 01_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 11
@@ -364,6 +368,7 @@ ScriptedImporter:
       spriteId: 2881cf3094ccb5d4ca85c41f3da5eb83
     - name: Smear VFX 01_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 11
@@ -372,6 +377,7 @@ ScriptedImporter:
       spriteId: 7ba97c48c17228e46a57893b1a71c901
     - name: Smear VFX 01_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 27
@@ -380,6 +386,7 @@ ScriptedImporter:
       spriteId: 42d1d75b4fd572245aab3e2162f93a69
     - name: Smear VFX 01_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 20
@@ -388,6 +395,7 @@ ScriptedImporter:
       spriteId: 3d87d89e5691b6945a92f5d9e11f62e8
     - name: Smear VFX 01_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 17
         y: 19
@@ -396,6 +404,7 @@ ScriptedImporter:
       spriteId: 5da09e8b41e77d94d865d43fa3fb2f78
     - name: Smear VFX 01_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 19
@@ -404,6 +413,7 @@ ScriptedImporter:
       spriteId: 6e82aebbde6af6c4e910a463782a28a5
     - name: Smear VFX 01_Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 19
