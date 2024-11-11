@@ -1,4 +1,6 @@
-﻿namespace Game.Scripts.Controllers.Interfaces
+﻿using Game.Scripts.Models;
+
+namespace Game.Scripts.Controllers.Interfaces
 {
     public interface ICharacterAttackPhysicsController : ICoreController
     {

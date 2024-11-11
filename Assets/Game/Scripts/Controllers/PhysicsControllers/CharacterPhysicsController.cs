@@ -1,6 +1,7 @@
 ﻿using Game.Scripts.Containers;
 using Game.Scripts.Controllers.Interfaces;
 using Game.Scripts.Core;
+using Game.Scripts.Models;
 using JetBrains.Annotations;
 using UnityEngine;
 

@@ -1,4 +1,5 @@
 ﻿using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Models;
 using Game.Scripts.Structs;
 using JetBrains.Annotations;
 

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Scripts.Models;
+using UnityEngine;
 
 namespace Game.Scripts.Controllers.Interfaces
 {

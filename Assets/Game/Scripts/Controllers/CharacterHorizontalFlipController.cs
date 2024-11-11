@@ -1,5 +1,6 @@
 ﻿using System;
 using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Models;
 
 namespace Game.Scripts.Controllers
 {

@@ -2,7 +2,7 @@
 using Game.Scripts.ScriptableObjects;
 using UnityEngine;
 
-namespace Game.Scripts.Controllers.Interfaces
+namespace Game.Scripts.Models
 {
     public interface ICharacterModel
     {

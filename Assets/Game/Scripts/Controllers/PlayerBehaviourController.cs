@@ -1,6 +1,7 @@
 ﻿using Game.Scripts.Containers;
 using Game.Scripts.Controllers.Input;
 using Game.Scripts.Controllers.Interfaces;
+using Game.Scripts.Models;
 using Game.Scripts.ScriptableObjects;
 using Game.Scripts.Updaters;
 using UnityEngine;

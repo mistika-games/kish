@@ -1,5 +1,6 @@
 ﻿using Game.Scripts.Controllers.Interfaces;
 using Game.Scripts.Core;
+using Game.Scripts.Models;
 using Game.Scripts.ScriptableObjects;
 using JetBrains.Annotations;
 using UnityEngine;
