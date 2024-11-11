@@ -14,9 +14,11 @@ namespace Game.Scripts.LifetimeScopes
         
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterComponentInNewPrefab(_catalog._playerBehaviour, Lifetime.Scoped);
+            builder.RegisterInstance(_catalog);
+            builder.RegisterComponentInNewPrefab(_catalog.PlayerBehaviour, Lifetime.Scoped);
             builder.RegisterComponentInNewPrefab(_catalog.InputManager, Lifetime.Scoped);
             builder.RegisterComponentInNewPrefab(_catalog.FollowCamera, Lifetime.Scoped);
+            builder.RegisterComponentInNewPrefab(_catalog.StoneBehaviourController, Lifetime.Scoped);
             builder.RegisterInstance(_catalog.GameConfiguration);
             builder.Register<ICharacterModel, CharacterModel>(Lifetime.Transient);
             builder.Register<ICharacterPhysicsController, CharacterPhysicsController>(Lifetime.Transient);
